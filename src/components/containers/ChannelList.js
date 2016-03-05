@@ -13,9 +13,6 @@ import { listChannels } from '../../redux/actions/channels'
 )
 export default class ChannelList extends Component {
 
-  var state = {
-    visible: false
-  }
   componentWillMount() {
     this.props.listChannels()
   }

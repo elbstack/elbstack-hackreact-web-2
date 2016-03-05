@@ -13,14 +13,13 @@ import ChannelList from '../containers/ChannelList'
     sendbird: state.sendbird
   })
 )
-
-function toggleChannelList(visible){
-  return !visible
-}
-
 export default class Messenger extends Component {
-  var state = {
-    channelListVisible : false
+  state = {
+    channelListVisible: false
+  }
+
+  toggleChannelList() {
+    this.setState({channelListVisible: !this.state.channelListVisible})
   }
 
   render() {
@@ -29,11 +28,11 @@ export default class Messenger extends Component {
         <div className={styles.nav}>
           <TeamLogo/>
           <Profile userName={this.props.sendbird.user_name}/>
-          <ListChannelsBtn onClick={this.toggleChannelList}/>
+          <ListChannelsBtn onClick={this.toggleChannelList.bind(this)}/>
           <JoinedChannelList />
         </div>
         <div className={styles.chat}>
-          <ChannelList />
+          { this.state.channelListVisible ? <ChannelList /> : null }
           <IntroText />
         </div>
       </div>
