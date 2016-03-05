@@ -1,9 +1,14 @@
-.logo {
+  .logo {
   display: block;
   height: 30px;
   width: 50px;
   float: left;
-  background: url('../../../static/images/react.svg') center center no-repeat;
+  background: url('../../../static/images/plane_alpha.png') center center no-repeat;
   background-size: contain;
   margin: 2px auto;
+}
+h2 {
+  padding-top: 5px;
+  font-size: 18px;
+  color: lightgrey;
 }
