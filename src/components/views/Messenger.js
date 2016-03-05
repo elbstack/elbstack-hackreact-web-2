@@ -15,12 +15,11 @@ import styles from './Messenger.scss'
 export default class Messenger extends Component {
 
   render() {
-
     return (
       <div className={styles.container}>
         <div className={styles.nav}>
           <TeamLogo/>
-          <Profile />
+          <Profile userName={this.props.sendbird.user_name}/>
           <ListChannelsBtn />
           <JoinedChannelList />
         </div>
